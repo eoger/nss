@@ -6,7 +6,7 @@
     '../../coreconf/config.gypi'
   ],
   'conditions': [
-    ['use_system_sqlite==1', {
+    ['use_system_sqlite==1 or no_sqlite==1', {
       'targets': [{
         'target_name': 'sqlite3',
         'type': 'none',

@@ -18,7 +18,7 @@
         '<(DEPTH)/lib/freebl/freebl.gyp:freebl_static',
       ],
       'conditions': [
-        [ 'use_system_sqlite==1', {
+        [ 'use_system_sqlite==1 or no_sqlite==1', {
           'dependencies': [
             '<(DEPTH)/lib/sqlite/sqlite.gyp:sqlite3',
           ],
@@ -62,6 +62,13 @@
           'sftkpwd.c',
           'softkver.c',
           'tlsprf.c'
+        ],
+        'conditions': [
+          ['no_sqlite==1', {
+            'sources!': [
+              'sdb.c'
+            ]
+          }],
         ],
       },
     },

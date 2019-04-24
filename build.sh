@@ -99,6 +99,7 @@ while [ $# -gt 0 ]; do
         --nspr) nspr_clean; rebuild_nspr=1 ;;
         --with-nspr=?*) set_nspr_path "${1#*=}"; no_local_nspr=1 ;;
         --system-nspr) set_nspr_path "/usr/include/nspr/:"; no_local_nspr=1 ;;
+        --no-sqlite) gyp_params+=(-Dno_sqlite=1) ;;
         --system-sqlite) gyp_params+=(-Duse_system_sqlite=1) ;;
         --enable-fips) gyp_params+=(-Ddisable_fips=0) ;;
         --enable-libpkix) gyp_params+=(-Ddisable_libpkix=0) ;;

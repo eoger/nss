@@ -32,7 +32,9 @@ endif
 
 ifndef MOZILLA_CLIENT
 ifndef NSS_USE_SYSTEM_SQLITE
+ifndef NSS_NO_SQLITE
 SQLITE_SRCDIR = sqlite  # Add the sqlite directory to DIRS.
+endif
 endif
 endif
 

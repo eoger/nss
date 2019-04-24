@@ -83,7 +83,7 @@
                 'lib/softoken/legacydb/legacydb.gyp:nssdbm',
               ],
             }],
-            [ 'use_system_sqlite==0', {
+            [ 'use_system_sqlite==0 and no_sqlite==0', {
               'dependencies': [
                 'lib/sqlite/sqlite.gyp:sqlite',
               ],

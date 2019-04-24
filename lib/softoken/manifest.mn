@@ -43,7 +43,6 @@ CSRCS = \
 	pkcs11.c   \
 	pkcs11c.c  \
 	pkcs11u.c  \
-	sdb.c  \
 	sftkdb.c  \
 	sftkhmac.c  \
 	sftkpars.c  \
@@ -52,6 +51,10 @@ CSRCS = \
 	tlsprf.c   \
 	jpakesftk.c \
 	$(NULL)
+
+ifndef NSS_NO_SQLITE
+CSRCS += sdb.c
+endif
 
 ifdef SQLITE_UNSAFE_THREADS
 DEFINES += -DSQLITE_UNSAFE_THREADS
